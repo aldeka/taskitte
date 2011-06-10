@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    }
+    
+a {
+    color: red; #99AA55;
+    }
+    
+#container {
+    width: 800px;
+    margin: 0 auto;
+    }
+    
