@@ -1,0 +1,10 @@
+#!/home/karen/Code/CivCommons/bin/python2.6
+# EASY-INSTALL-ENTRY-SCRIPT: 'epio==0.2.7','console_scripts','epio'
+__requires__ = 'epio==0.2.7'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('epio==0.2.7', 'console_scripts', 'epio')()
+    )
