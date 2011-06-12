@@ -1,15 +1,13 @@
-<!doctype html>
-<html>
-    <head>
-        <title>{{ message }}</title>
-        <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
-    </head>
-    <body>
-        <div id="container">
-        <div id="header">
-        <h1>{{ message }}</h1>
-        </div>
-        <div id="content">
+{% extends 'base.html' %}
+    {% block title %}
+    Civic Commons
+    {% endblock title %}
+    
+    {% block headertitle %}
+    Civic Commons Tasks
+    {% endblock headertitle %}
+
+    {% block content %}
         
         <div class="list">
             <div class="task">
@@ -21,20 +19,14 @@
                 <h4 class="task-name">Research other guides to FOSS that we can cannibalize</h4>
                     <div class="more">
                     <a class="get-more">more &raquo;</a>
-                        <div class="more-contents">
+                        <!--<div class="more-contents">
                         Someone should see what other "how to open source your software" or "how to make use of FOSS software in your institution" documents are out there that we can adapt and reuse, so we don't reinvent the wheel too much. Links and summaries can go on the wiki page below.
                         <a class="even-more" href="">http://civiccommons.org/wiki/Stuff</a>
-                        </div>
+                        </div>-->
                     </div>
                 <span class="contact">Lead contact: <a>Michelle Koeth</a></span>
                 </div>
                 
             </div>
         </div>
-        
-        </div>
-        <div id="footer">
-        </div>
-        </div>
-    </body>
-</html>
+        {% endblock content }

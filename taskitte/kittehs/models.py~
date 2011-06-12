@@ -5,6 +5,8 @@ import string
 
 class List(models.Model):
     name = models.CharField(max_length="30")
+    def __unicode__(self):
+        return self.name
     
     
 class Task(models.Model):
@@ -17,11 +19,15 @@ class Task(models.Model):
     is_claimed = models.BooleanField(default=False)
     claimants = models.ManyToManyField('Person', blank=True, null=True)
     is_closed = models.BooleanField(default=False)
-    email_list = models.OneToOneField(TinyMailingList, blank=True, null=True)
+    email_list = models.OneToOneField('TinyMailingList', blank=True, null=True)
+    def __unicode__(self):
+        return u'%s %s %s' % (self.list, " task #", self.pk)
     
 class Person(models.Model):
     name = models.CharField(max_length="30")
     email = models.EmailField()
+    def __unicode__(self):
+        return self.name
     
 class TinyMailingList(models.Model):
     name = models.CharField(max_length="30")
@@ -31,6 +37,8 @@ class TinyMailingList(models.Model):
         part_two = truncate(strip(self.task.name,string.punctuation),15)
         pk = self.pk
         return part_one + '-' + part_two + '-' + str(pk)
+    def __unicode__(self):
+        return u'%s %s' % (self.name, "@taskitte.com")
         
 def truncate(string, n):
     '''shortens a string to length n, then cuts off further at the next available space, if any'''

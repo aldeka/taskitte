@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Taskitte -- {% block title %}{% endblock %}</title>
+        {% block styles %}
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+        {% endblock styles %}
+    </head>
+    <body>
+        <div id="container">
+        <div id="header">
+        <h1>{% block headertitle %}Hello, everyone!{% endblock headertitle %}</h1>
+        </div>
+        <div id="content">
+        
+        {% block content %}
+           <h2>Welcome to the base template.</h2>
+        {% endblock content %}
+        </div>
+        
+        </div>
+        <div id="footer">
+        {% block footer %}
+        {% endblock footer %}
+        </div>
+        </div>
+    </body>
+</html>
