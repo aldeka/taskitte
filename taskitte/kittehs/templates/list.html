@@ -1,32 +1,33 @@
 {% extends 'base.html' %}
     {% block title %}
-    Civic Commons
+    {{list_name}}
     {% endblock title %}
     
     {% block headertitle %}
-    Civic Commons Tasks
+    {{list_name}}
     {% endblock headertitle %}
 
     {% block content %}
         
         <div class="list">
+            {% for task in tasks %}
             <div class="task">
-            
                 <div class="task-buttons">
                     <div class="button first-claim">Claim me!</div>
                 </div>
                 <div class="task-contents">
-                <h4 class="task-name">Research other guides to FOSS that we can cannibalize</h4>
+                <h4 class="task-name">{{task.name}}</h4>
                     <div class="more">
                     <a class="get-more">more &raquo;</a>
-                        <!--<div class="more-contents">
-                        Someone should see what other "how to open source your software" or "how to make use of FOSS software in your institution" documents are out there that we can adapt and reuse, so we don't reinvent the wheel too much. Links and summaries can go on the wiki page below.
-                        <a class="even-more" href="">http://civiccommons.org/wiki/Stuff</a>
+                        {{task.description}}
+                        <a class="even-more" href="{{task.even_more_info}}">{{task.even_more_info}}</a>
                         </div>-->
                     </div>
-                <span class="contact">Lead contact: <a>Michelle Koeth</a></span>
+                <span class="contact">Lead contact: <a href="mailto:{{contact_email}}">{{task.contact_name}}</a></span>
                 </div>
                 
             </div>
+            {% endfor %}
+            
         </div>
      {% endblock content %}
