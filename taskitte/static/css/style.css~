@@ -28,6 +28,7 @@ h4 {
 .task {
     width: 100%;
     background-color: #DDFF99;
+    border-bottom: 2px solid #fefefe
     }
     
 .task-contents {
@@ -42,15 +43,13 @@ h4 {
     -moz-border-radius: 15px;
     border-radius: 15px;
     background: rgba(255,255,255,0.5);
-    display: inline;
     }
     
 .more-contents {
     }
     
 .contact {
-    display: block;
-    margin: 5px 0 0 20px;
+    margin-left: 20px;
     }
     
 .task-buttons {

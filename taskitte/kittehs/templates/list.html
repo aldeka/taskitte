@@ -17,13 +17,21 @@
                 </div>
                 <div class="task-contents">
                 <h4 class="task-name">{{task.name}}</h4>
+                    {% if task.description or task.even_more_info %}
                     <div class="more">
                     <a class="get-more">more &raquo;</a>
-                        {{task.description}}
-                        <a class="even-more" href="{{task.even_more_info}}">{{task.even_more_info}}</a>
-                        </div>-->
+                        <div class="more-contents">
+                        {% if task.description %}
+                            {{task.description}}
+                        {% endif %}
+                        {% if task.even_more_info %}
+                            <br/>
+                            More info: <a class="even-more" href="{{task.even_more_info}}">{{task.even_more_info}}</a>
+                        {% endif %}
+                        </div>
                     </div>
-                <span class="contact">Lead contact: <a href="mailto:{{contact_email}}">{{task.contact_name}}</a></span>
+                    {% endif %}
+                <span class="contact">Lead contact: <a href="mailto:{{task.contact_email}}">{{task.contact_name}}</a></span>
                 </div>
                 
             </div>

@@ -28,6 +28,7 @@ h4 {
 .task {
     width: 100%;
     background-color: #DDFF99;
+    border-bottom: 2px solid #fefefe
     }
     
 .task-contents {
