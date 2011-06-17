@@ -17,8 +17,10 @@ class Task(models.Model):
     contact_name = models.CharField(max_length="30")
     contact_email = models.EmailField()
     is_claimed = models.BooleanField(default=False)
-    claimants = models.ManyToManyField('Person', blank=True, null=True)
+    accepts_mult_claimants = models.BooleanField(default=False)
+    # if is_claimed and !accepts_mult_claimants, this is inherently true
     is_closed = models.BooleanField(default=False)
+    claimants = models.ManyToManyField('Person', blank=True, null=True)
     email_list = models.OneToOneField('TinyMailingList', blank=True, null=True)
     def __unicode__(self):
         return u'%s%s%s' % (self.list, " task #", self.pk)

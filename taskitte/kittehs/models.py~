@@ -17,11 +17,13 @@ class Task(models.Model):
     contact_name = models.CharField(max_length="30")
     contact_email = models.EmailField()
     is_claimed = models.BooleanField(default=False)
+    accepts_mult_claimants = models.BooleanField(default=False)
     claimants = models.ManyToManyField('Person', blank=True, null=True)
+    # if is_claimed and !accepts_mult_claimants, this is inherently true
     is_closed = models.BooleanField(default=False)
     email_list = models.OneToOneField('TinyMailingList', blank=True, null=True)
     def __unicode__(self):
-        return u'%s %s %s' % (self.list, " task #", self.pk)
+        return u'%s%s%s' % (self.list, " task #", self.pk)
     
 class Person(models.Model):
     name = models.CharField(max_length="30")
@@ -38,7 +40,7 @@ class TinyMailingList(models.Model):
         pk = self.pk
         return part_one + '-' + part_two + '-' + str(pk)
     def __unicode__(self):
-        return u'%s %s' % (self.name, "@taskitte.com")
+        return u'%s%s' % (self.name, "@taskitte.com")
         
 def truncate(string, n):
     '''shortens a string to length n, then cuts off further at the next available space, if any'''

@@ -8,13 +8,24 @@ body {
     }
     
 a {
-    color: #99AA55;
+    color: #666;
     }
     
 h4 {
     font-size: 1.3em;
     margin: 0;
     }
+    
+h5 {
+    font-size: .9em;
+    font-weight: normal;
+    margin: 0;
+
+}
+    
+.hidden {
+    display: none;
+}
     
 #container {
     width: 800px;
@@ -27,12 +38,11 @@ h4 {
     
 .task {
     width: 100%;
-    background-color: #DDFF99;
+    background-color: #e3e9d1;
     border-bottom: 1px solid #fefefe
     }
     
 .task-contents {
-    width: 570px;
     padding: 10px 15px;
     background-color: #eee;
     }
@@ -53,9 +63,55 @@ h4 {
     }
     
 .task-buttons {
-    float: right;
     width: 135px;
     text-align: center;
-    padding: 10px 15px 10px 0;
-    
+    padding: 5px 5px;
+    align: center;
+    margin-left:auto; 
+    margin-right:auto;
+    vertical-align:text-top;
     }
+    
+.button {
+    display: block;
+    color: black;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+    border-top: 1px solid #ddffc9;
+    border-left: 1px solid #ddffc9;
+    border-right: 2px solid #a9cb98;
+    border-bottom: 2px solid #a9cb98;
+    background-color: #bbddaa;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 0 auto;
+}
+
+.first-claim, .single-claimed{
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+
+.claimed {
+    background-color: #fe98a9;
+    border-top: 1px solid #ffcbcc;
+    border-left: 1px solid #ffdbde;
+    border-right: 2px solid #ed77a9;
+    border-bottom: 2px solid #ed77a9;
+}
+
+.claimants {
+    height: 30px;
+    padding-bottom: 2px;
+    text-align: left;
+}
+
+.claimants img {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255,255,255,.5);
+    border: 2px solid white;
+    margin-right: 5px;
+}
